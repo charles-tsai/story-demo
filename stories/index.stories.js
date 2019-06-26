@@ -25,3 +25,15 @@ storiesOf('Button', module)
       </span>
     </Button>
   ));
+  storiesOf('Select', module)
+  .add('Index', () => (
+    <select value="Index" onChange={linkTo('Select', e => e.currentTarget.value)}>
+      <option>Index</option>
+      <option>First</option>
+      <option>Second</option>
+      <option>Third</option>
+    </select>
+  ))
+  .add('First', () => <button onClick={linkTo('Select', 'Index')}>Go Back</button>)
+  .add('Second', () => <button onClick={linkTo('Select', 'Index')}>Go Back</button>)
+  .add('Third', () => <button onClick={linkTo('Select', 'Index')}>Go Back</button>);
